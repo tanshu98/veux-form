@@ -15,10 +15,16 @@ export default new Vuex.Store({
     REMOVE_ITEM: (state, name) => {
       state.namelist.pop(name)
     },
-    SUBMIT_ITEM: (state,name) => {
-      state.namelist(state,name)
+    SUBMIT_ITEM: (state) => {
+      console.log(state.namelist);   
+    },
+    CLEAR_ITEM: (state,name) => {
+    state.namelist.splice(state,name)
+    // var index = state.newitem.index(i => i.id == newitem.id);
+    // state.newitem.splice(index, 1);
     }
   },
-  actions: {},
-  modules: {},
+  // getters: {
+  //   nameCount: state => state.nameList[],
+  // }
 });
