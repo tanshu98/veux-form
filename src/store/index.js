@@ -20,11 +20,7 @@ export default new Vuex.Store({
     },
     CLEAR_ITEM: (state,name) => {
     state.namelist.splice(state,name)
-    // var index = state.newitem.index(i => i.id == newitem.id);
-    // state.newitem.splice(index, 1);
     }
   },
-  // getters: {
-  //   nameCount: state => state.nameList[],
-  // }
+  
 });

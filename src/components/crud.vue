@@ -44,13 +44,6 @@
       </div>
     </v-form>
   </v-container>
-  <!-- <div>
-    <h1>{{name}}</h1>
-    <h2>{{namelist}}</h2>
-  <form @submit.prevent="add_item">
-   <input class="link-input" type="text" placeholder="Name" v-model="newitem" />
-</form>
-  </div> -->
 </template>
 <script>
 import { mapState, mapMutations } from "vuex";
