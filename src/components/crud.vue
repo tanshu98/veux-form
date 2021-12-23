@@ -14,6 +14,14 @@
               >
               </v-text-field>
             </div>
+            <v-text-field
+                v-model="newitem"
+                label="Name"
+                :counter="10"
+                :rules="nameRules"
+                outlined
+              >
+              </v-text-field>
           </v-col>
           <v-col cols="2" class="d-flex">
             <v-btn class="mx-2" fab dark color="primary" @click="add_item">
@@ -36,7 +44,7 @@
           <v-btn
             color="purple lighten-1"
             class="ma-2 white--text"
-            @click="clear_item(newitem)"
+            @click="clear_item"
           >
             Clear
           </v-btn>
@@ -68,7 +76,7 @@ export default {
  
   methods: {
    
-    ...mapMutations(["ADD_ITEM", "REMOVE_ITEM", "SUBMIT_ITEM","CLEAR_ITEM"]),
+    ...mapMutations(["ADD_ITEM", "REMOVE_ITEM", "SUBMIT_ITEM"]),
     add_item() {
       this.ADD_ITEM(this.newitem);
       this.newitem = "";
@@ -77,11 +85,10 @@ export default {
       this.REMOVE_ITEM(this.newitem);
     },
     submit_item() {
-      this.SUBMIT_ITEM(this.newitem);
+      this.SUBMIT_ITEM(this.namelist);
     },
-    clear_item(index) {
-      this.REMOVE_ITEM(index);
-      // this.$store.commit('CLEAR_ITEM',newitem)
+    clear_item() {
+      this.newitem = "";
     },
   },
 };

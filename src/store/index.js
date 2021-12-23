@@ -16,11 +16,10 @@ export default new Vuex.Store({
       state.namelist.pop(name)
     },
     SUBMIT_ITEM: (state) => {
-      console.log(state.namelist);   
+      state.namelist.forEach((name) => {
+        console.log(name);
+      })
     },
-    CLEAR_ITEM: (state,name) => {
-    state.namelist.splice(state,name)
-    }
   },
   
 });
